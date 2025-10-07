@@ -23,7 +23,13 @@ export type NoteListResponse = {
   total: number;
 };
 
-axios.defaults.baseURL = "https://next-docs-api.onrender.com";
+export type NewNoteData = {
+  title: string;
+  content: string;
+  categoryId: string;
+};
+
+axios.defaults.baseURL = "https://next-docs-9f0504b0a741.herokuapp.com";
 
 export const getNotes = async (categoryId?: string) => {
   const res = await axios.get<NoteListResponse>("/notes", {
@@ -39,5 +45,10 @@ export const getSingleNote = async (id: string) => {
 
 export const getCategories = async () => {
   const res = await axios.get<Category[]>("/categories");
+  return res.data;
+};
+
+export const createNote = async (data: NewNoteData) => {
+  const res = await axios.post<Note>("/notes", data);
   return res.data;
 };
