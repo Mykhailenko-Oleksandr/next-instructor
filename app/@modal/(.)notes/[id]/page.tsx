@@ -1,7 +1,7 @@
 // app/@modal/(.)notes/[id]/page.tsx
 
-import { getSingleNote } from "@/lib/api";
 import Modal from "@/components/Modal/Modal";
+import { getSingleNote } from "@/lib/api/clientApi";
 
 type Props = {
   params: Promise<{ id: string }>;

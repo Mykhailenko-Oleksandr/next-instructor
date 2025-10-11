@@ -1,19 +1,23 @@
-import Link from "next/link";
-import { getCategories } from "@/lib/api";
+// components/Header/Header.tsx
+
 import CategoriesMenu from "../CategoriesMenu/CategoriesMenu";
+import Link from "next/link";
+import AuthNavigation from "../AuthNavigation/AuthNavigation";
 
 const Header = async () => {
-  const categories = await getCategories();
+  // const categories = await getCategories();
 
   return (
     <header>
-      <Link href="/" aria-label="Home">
+      <Link
+        href="/"
+        aria-label="Home">
         NoteHub
       </Link>
       <nav aria-label="Main Navigation">
         <ul>
           <li>
-            <CategoriesMenu categories={categories} />
+            <CategoriesMenu />
           </li>
           <li>
             <Link href="/profile">Profile</Link>
@@ -21,6 +25,7 @@ const Header = async () => {
           <li>
             <Link href="/about">About</Link>
           </li>
+          <AuthNavigation />
         </ul>
       </nav>
     </header>

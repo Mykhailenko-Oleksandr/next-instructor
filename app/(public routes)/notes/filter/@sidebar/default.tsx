@@ -1,5 +1,5 @@
+import { getCategories } from "@/lib/api/clientApi";
 import Link from "next/link";
-import { getCategories } from "@/lib/api";
 
 const NotesSidebar = async () => {
   const categories = await getCategories();

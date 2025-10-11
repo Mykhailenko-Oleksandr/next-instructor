@@ -3,9 +3,9 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { Category, createNote, NewNoteData } from "@/lib/api";
 import { useMutation } from "@tanstack/react-query";
 import { useNoteDraftStore } from "@/lib/stores/noteStore";
+import { Category, createNote, NewNoteData } from "@/lib/api/clientApi";
 
 type Props = {
   categories: Category[];
@@ -60,8 +60,7 @@ const NoteForm = ({ categories }: Props) => {
         <textarea
           name="content"
           defaultValue={draft?.content}
-          onChange={handleChange}
-        ></textarea>
+          onChange={handleChange}></textarea>
       </label>
 
       <label>
@@ -69,10 +68,11 @@ const NoteForm = ({ categories }: Props) => {
         <select
           name="category"
           defaultValue={draft?.categoryId}
-          onChange={handleChange}
-        >
+          onChange={handleChange}>
           {categories.map((category) => (
-            <option key={category.id} value={category.id}>
+            <option
+              key={category.id}
+              value={category.id}>
               {category.name}
             </option>
           ))}
@@ -81,7 +81,9 @@ const NoteForm = ({ categories }: Props) => {
 
       <div>
         <button type="submit">Create</button>
-        <button type="button" onClick={handleCancel}>
+        <button
+          type="button"
+          onClick={handleCancel}>
           Cancel
         </button>
       </div>

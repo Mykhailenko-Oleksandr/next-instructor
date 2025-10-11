@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <section>
-      return <h1>Home</h1>
+      <h1>Home</h1>
       {/* <Image
         src="/hero.jpg"
         alt="hero"
@@ -18,6 +18,7 @@ export default function Home() {
         alt="test"
         width={300}
         height={300}
+        priority
       />
     </section>
   );

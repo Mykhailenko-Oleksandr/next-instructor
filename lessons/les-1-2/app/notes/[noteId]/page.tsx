@@ -1,5 +1,5 @@
 // SSR
-import { getSingleNote } from "@/lib/api";
+import { getSingleNote } from "@/lib/api/api";
 import {
   dehydrate,
   HydrationBoundary,

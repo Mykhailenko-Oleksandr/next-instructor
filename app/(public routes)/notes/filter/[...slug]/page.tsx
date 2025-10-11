@@ -1,7 +1,7 @@
 // app/notes/filter/[...slug]/page.tsx
 
-import { getNotes } from "@/lib/api";
 import NoteList from "@/components/NoteList/NoteList";
+import { getNotes } from "@/lib/api/clientApi";
 
 type Props = {
   params: Promise<{ slug: string[] }>;

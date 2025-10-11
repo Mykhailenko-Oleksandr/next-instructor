@@ -1,4 +1,4 @@
-import { Note } from "@/lib/api";
+import { Note } from "@/lib/api/clientApi";
 import NoteItem from "../NoteItem/NoteItem";
 
 type Props = {
@@ -9,7 +9,10 @@ export default function NoteList({ notes }: Props) {
   return (
     <ul>
       {notes.map((note) => (
-        <NoteItem key={note.id} item={note} />
+        <NoteItem
+          key={note.id}
+          item={note}
+        />
       ))}
     </ul>
   );

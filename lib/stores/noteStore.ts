@@ -3,7 +3,7 @@
 import { create } from "zustand";
 // 1. Імпортуємо функцію
 import { persist } from "zustand/middleware";
-import { NewNoteData } from "../api";
+import { NewNoteData } from "../api/api";
 
 type NoteDraftStore = {
   draft: NewNoteData;
